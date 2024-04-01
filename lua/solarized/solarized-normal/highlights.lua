@@ -36,10 +36,10 @@ function M.load_syntax(colors)
 		syntax["DiffDelete"] = { fg = colors.red, bg = colors.none, style = "bold" }
 		syntax["DiffText"] = { fg = colors.blue, bg = colors.none, guisp = colors.blue }
 	elseif g.solarized_diffmode == "high" and g.solarized_reverse then
-		syntax["DiffAdd"] = { fg = colors.green, bg = colors.none, style = "reverse" }
-		syntax["DiffChange"] = { fg = colors.yellow, bg = colors.none, style = "reverse" }
-		syntax["DiffDelete"] = { fg = colors.red, bg = colors.none, style = "reverse" }
-		syntax["DiffText"] = { fg = colors.blue, bg = colors.none, style = "reverse" }
+		syntax["DiffAdd"] = { fg = colors.green, bg = colors.none }
+		syntax["DiffChange"] = { fg = colors.yellow, bg = colors.none }
+		syntax["DiffDelete"] = { fg = colors.red, bg = colors.none }
+		syntax["DiffText"] = { fg = colors.blue, bg = colors.none }
 	else
 		syntax["DiffAdd"] = { fg = colors.green, bg = colors.base02, guisp = colors.green }
 		syntax["DiffChange"] = { fg = colors.yellow, bg = colors.base02, guisp = colors.yellow }
@@ -48,31 +48,25 @@ function M.load_syntax(colors)
 	end
 
 	if g.solarized_statusline == "low" then
-		if g.solarized_reverse then
-			syntax["StatusLine"] = { fg = colors.base01, bg = colors.base2, style = "reverse" }
-			syntax["StatusLineNC"] = { fg = colors.base01, bg = colors.base02, style = "reverse" }
-			syntax["TabLine"] = { fg = colors.base01, bg = colors.base02, style = "reverse" }
-			syntax["TabLineFill"] = { fg = colors.base01, bg = colors.base02, style = "reverse" }
-			syntax["TabLineSel"] = { fg = colors.base0, bg = colors.base3, style = "reverse" }
-		end
+		syntax["StatusLine"] = { fg = colors.base01, bg = colors.base2 }
+		syntax["StatusLineNC"] = { fg = colors.base01, bg = colors.base02 }
+		syntax["TabLine"] = { fg = colors.base01, bg = colors.base02 }
+		syntax["TabLineFill"] = { fg = colors.base01, bg = colors.base02 }
+		syntax["TabLineSel"] = { fg = colors.base0, bg = colors.base3 }
 		syntax["VertSplit"] = { fg = colors.base01, bg = colors.none }
 	elseif g.solarized_statusline == "flat" then
-		if g.solarized_reverse then
-			syntax["StatusLine"] = { fg = colors.base02, bg = colors.base2, style = "reverse" }
-			syntax["StatusLineNC"] = { fg = colors.base02, bg = colors.base1, style = "reverse" }
-		end
+		syntax["StatusLine"] = { fg = colors.base02, bg = colors.base2 }
+		syntax["StatusLineNC"] = { fg = colors.base02, bg = colors.base1 }
 		syntax["TabLineSel"] = { fg = colors.base2, bg = colors.base02 }
 		syntax["TabLine"] = { fg = colors.base01, bg = colors.base02 }
 		syntax["TabLineFill"] = { fg = colors.base01, bg = colors.base02 }
 		syntax["VertSplit"] = { fg = colors.base02, bg = colors.none }
 	else
-		if g.solarized_reverse then
-			syntax["StatusLine"] = { fg = colors.base0, bg = colors.base02, style = "reverse" }
-			syntax["StatusLineNC"] = { fg = colors.base01, bg = colors.base02, style = "reverse" }
-			syntax["TabLine"] = { fg = colors.base01, bg = colors.base02, style = "reverse" }
-			syntax["TabLineFill"] = { fg = colors.base01, bg = colors.base02, style = "reverse" }
-			syntax["TabLineSel"] = { fg = colors.base0, bg = colors.base02, style = "reverse" }
-		end
+		syntax["StatusLine"] = { fg = colors.base0, bg = colors.base02 }
+		syntax["StatusLineNC"] = { fg = colors.base01, bg = colors.base02 }
+		syntax["TabLine"] = { fg = colors.base01, bg = colors.base02 }
+		syntax["TabLineFill"] = { fg = colors.base01, bg = colors.base02 }
+		syntax["TabLineSel"] = { fg = colors.base0, bg = colors.base02 }
 		syntax["VertSplit"] = { fg = colors.base01 }
 	end
 
@@ -80,18 +74,17 @@ function M.load_syntax(colors)
 		syntax["CursorLineNr"] = { fg = colors.orange, bg = colors.base02, style = "bold" }
 		syntax["LineNr"] = { fg = colors.base0, bg = colors.base02 }
 		syntax["NonText"] = { fg = colors.orange, style = "bold" }
-		syntax["SpecialKey"] = { fg = colors.orange, style = "reverse" }
-		syntax["SpellBad"] = { fg = colors.violet, bg = colors.base3, guisp = colors.red, style = "reverse,undercurl" }
-		syntax["SpellCap"] = { fg = colors.violet, bg = colors.base3, guisp = colors.red, style = "reverse,undercurl" }
-		syntax["SpellLocal"] =
-			{ fg = colors.yellow, bg = colors.base3, guisp = colors.red, style = "reverse,undercurl" }
-		syntax["SpellRare"] = { fg = colors.cyan, bg = colors.base3, guisp = colors.red, style = "reverse,undercurl" }
+		syntax["SpecialKey"] = { fg = colors.orange }
+		syntax["SpellBad"] = { fg = colors.violet, bg = colors.base3, guisp = colors.red, style = "undercurl" }
+		syntax["SpellCap"] = { fg = colors.violet, bg = colors.base3, guisp = colors.red, style = "undercurl" }
+		syntax["SpellLocal"] = { fg = colors.yellow, bg = colors.base3, guisp = colors.red, style = "undercurl" }
+		syntax["SpellRare"] = { fg = colors.cyan, bg = colors.base3, guisp = colors.red, style = "undercurl" }
 		syntax["Title"] = { fg = colors.yellow, style = "bold" }
 	elseif g.solarized_visibility == "low" then
 		syntax["CursorLineNr"] = { fg = colors.base01, bg = colors.base02, style = "bold" }
 		syntax["LineNr"] = { fg = colors.base01, bg = colors.base02 }
 		syntax["NonText"] = { fg = colors.base02, style = "bold" }
-		syntax["SpecialKey"] = { fg = colors.base02, style = "reverse" }
+		syntax["SpecialKey"] = { fg = colors.base02 }
 		syntax["SpellBad"] = { fg = colors.violet, guisp = colors.violet, style = "undercurl" }
 		syntax["SpellCap"] = { fg = colors.violet, guisp = colors.violet, style = "undercurl" }
 		syntax["SpellLocal"] = { fg = colors.yellow, guisp = colors.yellow, style = "undercurl" }
@@ -114,7 +107,7 @@ function M.load_syntax(colors)
 	syntax["CursorColumn"] = { fg = colors.none, bg = colors.base02 }
 	syntax["Directory"] = { fg = colors.blue }
 	syntax["EndOfBuffer"] = { fg = colors.none, ctermfg = colors.none, ctermbg = colors.none }
-	syntax["ErrorMsg"] = { fg = colors.red, bg = colors.err_bg, style = "reverse" }
+	syntax["ErrorMsg"] = { fg = colors.red, bg = colors.err_bg }
 	syntax["IncSearch"] = { fg = colors.orange, style = "standout" }
 	syntax["MatchParen"] = { fg = colors.base3, bg = colors.base02, style = "bold" }
 	syntax["ModeMsg"] = { fg = colors.blue }
@@ -124,16 +117,16 @@ function M.load_syntax(colors)
 	syntax["PmenuSel"] = { fg = colors.base2, bg = colors.base00 }
 	syntax["PmenuThumb"] = { fg = colors.none, bg = colors.base0 }
 	syntax["Question"] = { fg = colors.cyan, style = "bold" }
-	syntax["Search"] = { fg = colors.yellow, style = "reverse" }
+	syntax["Search"] = { fg = colors.yellow }
 	syntax["SignColumn"] = { fg = colors.base0 }
-	syntax["Visual"] = { fg = colors.base01, bg = colors.base03, style = "reverse" }
-	syntax["VisualNOS"] = { fg = colors.none, bg = colors.base02, style = "reverse" }
+	syntax["Visual"] = { fg = colors.base01, bg = colors.base03 }
+	syntax["VisualNOS"] = { fg = colors.none, bg = colors.base02 }
 	syntax["WarningMsg"] = { fg = colors.orange, style = "bold" }
-	syntax["WildMenu"] = { fg = colors.base2, bg = colors.base02, style = "reverse" }
+	syntax["WildMenu"] = { fg = colors.base2, bg = colors.base02 }
 	syntax["Comment"] = { fg = colors.base01, style = utils.italics() }
 	syntax["Constant"] = { fg = colors.cyan }
 	syntax["CursorIM"] = { fg = colors.none, bg = colors.base1 }
-	syntax["Error"] = { fg = colors.red, bg = colors.err_bg, style = "bold,reverse" }
+	syntax["Error"] = { fg = colors.red, bg = colors.err_bg, style = "bold" }
 	syntax["Identifier"] = { fg = colors.blue }
 	syntax["Ignore"] = { fg = colors.none, ctermfg = colors.none, ctermbg = colors.none }
 	syntax["PreProc"] = { fg = colors.orange }
@@ -144,11 +137,11 @@ function M.load_syntax(colors)
 	syntax["Text"] = { fg = colors.cyan }
 	syntax["Strikethrough"] = { fg = colors.base01, strikethrough = true }
 	syntax["Underlined"] = { fg = colors.violet }
-	syntax["NormalMode"] = { fg = colors.base0, bg = colors.base3, style = "reverse" }
-	syntax["InsertMode"] = { fg = colors.cyan, bg = colors.base3, style = "reverse" }
-	syntax["ReplaceMode"] = { fg = colors.orange, bg = colors.base3, style = "reverse" }
-	syntax["VisualMode"] = { fg = colors.magenta, bg = colors.base3, style = "reverse" }
-	syntax["CommandMode"] = { fg = colors.magenta, bg = colors.base3, style = "reverse" }
+	syntax["NormalMode"] = { fg = colors.base0, bg = colors.base3 }
+	syntax["InsertMode"] = { fg = colors.cyan, bg = colors.base3 }
+	syntax["ReplaceMode"] = { fg = colors.orange, bg = colors.base3 }
+	syntax["VisualMode"] = { fg = colors.magenta, bg = colors.base3 }
+	syntax["CommandMode"] = { fg = colors.magenta, bg = colors.base3 }
 	syntax["vimCommentString"] = { fg = colors.violet }
 	syntax["vimCommand"] = { fg = colors.yellow }
 	syntax["vimCmdSep"] = { fg = colors.blue, style = "bold" }
@@ -229,7 +222,7 @@ function M.load_syntax(colors)
 	syntax["pandocStrongEmphasisDefinition"] = { fg = colors.violet, style = "bold" }
 	syntax["pandocStrongEmphasisNestedDefinition"] = { fg = colors.violet, style = "bold" }
 	syntax["pandocStrongEmphasisEmphasisDefinition"] = { fg = colors.violet, style = "bold" }
-	syntax["pandocStrikeoutDefinition"] = { fg = colors.violet, style = "reverse" }
+	syntax["pandocStrikeoutDefinition"] = { fg = colors.violet }
 	syntax["pandocVerbatimInlineDefinition"] = { fg = colors.violet }
 	syntax["pandocSuperscriptDefinition"] = { fg = colors.violet }
 	syntax["pandocSubscriptDefinition"] = { fg = colors.violet }
@@ -242,7 +235,7 @@ function M.load_syntax(colors)
 	syntax["pandocStrongEmphasisTable"] = { fg = colors.blue, style = "bold" }
 	syntax["pandocStrongEmphasisNestedTable"] = { fg = colors.blue, style = "bold" }
 	syntax["pandocStrongEmphasisEmphasisTable"] = { fg = colors.blue, style = "bold" }
-	syntax["pandocStrikeoutTable"] = { fg = colors.blue, style = "reverse" }
+	syntax["pandocStrikeoutTable"] = { fg = colors.blue }
 	syntax["pandocVerbatimInlineTable"] = { fg = colors.blue }
 	syntax["pandocSuperscriptTable"] = { fg = colors.blue }
 	syntax["pandocSubscriptTable"] = { fg = colors.blue }
@@ -253,7 +246,7 @@ function M.load_syntax(colors)
 	syntax["pandocStrongEmphasisHeading"] = { fg = colors.orange, style = "bold" }
 	syntax["pandocStrongEmphasisNestedHeading"] = { fg = colors.orange, style = "bold" }
 	syntax["pandocStrongEmphasisEmphasisHeading"] = { fg = colors.orange, style = "bold" }
-	syntax["pandocStrikeoutHeading"] = { fg = colors.orange, style = "reverse" }
+	syntax["pandocStrikeoutHeading"] = { fg = colors.orange }
 	syntax["pandocVerbatimInlineHeading"] = { fg = colors.orange, style = "bold" }
 	syntax["pandocSuperscriptHeading"] = { fg = colors.orange, style = "bold" }
 	syntax["pandocSubscriptHeading"] = { fg = colors.orange, style = "bold" }
@@ -280,7 +273,7 @@ function M.load_syntax(colors)
 	syntax["pandocStrongEmphasis"] = { fg = colors.base0, style = "bold" }
 	syntax["pandocStrongEmphasisNested"] = { fg = colors.base0, style = "bold" }
 	syntax["pandocStrongEmphasisEmphasis"] = { fg = colors.base0, style = "bold" }
-	syntax["pandocStrikeout"] = { fg = colors.base01, style = "reverse" }
+	syntax["pandocStrikeout"] = { fg = colors.base01 }
 	syntax["pandocVerbatimInline"] = { fg = colors.yellow }
 	syntax["pandocSuperscript"] = { fg = colors.violet }
 	syntax["pandocSubscript"] = { fg = colors.violet }
@@ -288,7 +281,7 @@ function M.load_syntax(colors)
 	syntax["pandocRuleLine"] = { fg = colors.blue, style = "bold" }
 	syntax["pandocEscapePair"] = { fg = colors.red, style = "bold" }
 	syntax["pandocCitationRef"] = { fg = colors.magenta }
-	syntax["pandocNonBreakingSpace"] = { fg = colors.red, style = "reverse" }
+	syntax["pandocNonBreakingSpace"] = { fg = colors.red }
 	syntax["pandocMetadataDelim"] = { fg = colors.base01 }
 	syntax["pandocMetadata"] = { fg = colors.blue }
 	syntax["pandocMetadataKey"] = { fg = colors.blue }
